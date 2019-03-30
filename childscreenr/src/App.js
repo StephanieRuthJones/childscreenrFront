@@ -25,11 +25,11 @@ class App extends Component {
     const response = await fetch(url)
     const json = await response.json()
     this.setState({ testItemData: json })
-
+    console.log(this.state.testItemData[0].test_item)
   }
 
   render() {
-    console.log(this.state.testItemData)
+    // console.log(this.state.testItemData[0])
     return (
       <div className="App row">
         <div className="column">
