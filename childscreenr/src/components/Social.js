@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Social = () => {
+const Social = (props) => {
     return (
-        <div className="container">
-            Social
-
-        </div>
+        < div >
+            {props.testItemData.filter(data => data.category === 'socialSkills').map(data => {
+                return <p>{data.test_item}</p>
+            })}
+        </div >
 
     )
 }

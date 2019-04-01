@@ -1,10 +1,14 @@
 import React from 'react';
-
-const Receptive = () => {
+//need to pass props at app.js level
+const Receptive = (props) => {
     return (
-        <div className="container">
-            Receptive
-        </div>
+
+        < div >
+            {props.testItemData.filter(data => data.category === 'receptive').map(data => {
+                return <p>{data.test_item}</p>
+            })}
+        </div >
+
 
     )
 }
