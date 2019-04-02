@@ -1,11 +1,60 @@
+html, body {
+  height: 100%;
+}
 .App {
-  
   margin: 0;
   padding: 0;
-  display:flex;
+  height: 100%;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+
+.form-group {
+  margin-left: 30px;
+}
+
+.form-group label {
+  font-size: 10px;
+}
+
+.form-group .input .form-control {
+  width: 200px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.test-items {
+  margin-left: 30px;
+}
+
+.btn {
+  margin: 0px 0 0 20px;
+}
+
+.answer {
+  font-size: 10px;
+  margin-left: 40px;
+  border-bottom: solid;
+}
+
+.accuracy {
+  height: 20px;
+  width: 15px;
+  font-size: 10px;
+  align-self: center;
+
+}
+
+.next {
+  margin: 20px 0 50px 0;
+}
+
+.checkbox {
+  margin-left: 20px;
+}
+/* 
 .container {
   justify-content: center;
 }
@@ -36,7 +85,7 @@ i {
   font-size: 10px;
   padding: 10px;
 }
-
+*/
 
 form {
   align-items: center;
@@ -48,4 +97,4 @@ form {
 .form-title{
   font-size: 20px;
  
-}
+} 

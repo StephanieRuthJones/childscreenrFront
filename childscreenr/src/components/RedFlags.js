@@ -4,184 +4,64 @@ import { Link } from 'react-router-dom'
 const RedFlags = () => {
     return (
 
-        < div >
+        <div className="justify-content-center test-items">
+            <h2>Red Flags</h2>
 
-            <h1>Red Flags</h1>
+            <div className="p-2 bd-highlight">
+                <p>No joint attention
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>No joint attention</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Decreased or inappropriate eye contact
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>No / limited / inappropriate eye contact</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Self-stimulates (flaps hands, spins, rocks)
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Self-stimulates (flaps hands, spins, rocks)</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Excessive drooling
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Excessive drooling</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Does not respond to own name
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Doesn't respond to own name</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Repeats non-communicative phrases
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Repeats non-communicative phrases</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Excessive use of jargon
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Excessive use of jargon</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Speech cannot be understood more than 50% of the time
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Persistent use of fixed topics of themes in conversation</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Takes a long time to respond or is unresponsive when spoken to
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Speech cannot be understood more than 50% of the time</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
+            <div className="p-2 bd-highlight">
+                <p>Echolalia
+                    <input type="checkbox" class="checkbox"></input></p>
+            </div>
 
-            <p>Talks to self with no intent to communicate</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Takes a long time to respond or is unresponsive when spoken to</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Confused by simple directions</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Echoes or repeats questions and directions</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Displays a limited range of interests</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Difficulty naming common objects</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Speaks only 1-3 word phrases</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Unaware of others</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>No joint attention</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>No / inappropriate eye contact</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Self-stimulates (flaps hands, spins, rocks)</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-            <p>Engages in repetitive behaviors</p>
-            <button className="ui button">
-                <i className="fas fa-check"></i>
-            </button>
-            <button className="ui button">
-                <i className="fas fa-times"></i>
-            </button>
-
-
-            <Link to="/resultschart">
-                <div className="mt-3">
-                    <button className="ui button">See results</button>
+            <div className="col-xs-8 vertical-align-center">
+                <div className="row justify-content-center">
+                    <Link to="/redflags"> <button className="next btn btn-outline-success col-10 align-self-center">Next Section</button> </Link>
                 </div>
-            </Link>
+            </div>
         </div >
 
     )

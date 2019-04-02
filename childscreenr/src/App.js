@@ -4,19 +4,18 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
 
 import Navbar from './components/Navbar'
-import Materials from './components/Materials'
-import StudentInfo from './components/StudentInfo'
-import Receptive from './components/Receptive'
-import Expressive from './components/Expressive'
-import Articulation from './components/Articulation'
-import Social from './components/Social'
+import Materials from './components/screeningprep/Materials'
+import StudentInfo from './components/screeningprep/StudentInfo'
+import Receptive from './components/languageareas/Receptive'
+import Expressive from './components/languageareas/Expressive'
+import Social from './components/languageareas/Social'
 import RedFlags from './components/RedFlags'
-import ResultsChart from './components/ResultsChart'
-import Report from './components/Report'
+import ResultsChart from './components/results/ResultsChart'
+import Report from './components/results/Report'
 
 
 const url = 'http://localhost:3002/'
-
+const testAccuracyData = []
 class App extends Component {
   constructor(props) {
     super(props)
@@ -35,7 +34,11 @@ class App extends Component {
   }
 
   responseAccuracyButton(e) {
-    console.log('button clicked', e.target.value)
+    console.log('button clicked', e.target.id)
+    testAccuracyData.push({ student_id: 26, testItem_id: e.target.id, accuracy: e.target.value })
+    console.log('test acc data', testAccuracyData)
+    //need to figure out how to find student ID
+    //post above info
   }
 
   render() {
@@ -51,7 +54,6 @@ class App extends Component {
             <Route path="/studentinfo" exact component={StudentInfo} />
             <Route path="/receptive" exact render={() => <Receptive testItemData={this.state.testItemData} responseAccuracyButton={this.responseAccuracyButton} />} />
             <Route path="/expressive" exact render={() => <Expressive testItemData={this.state.testItemData} />} />
-            <Route path="/articulation" exact component={Articulation} />
             <Route path="/social" exact render={() => <Social testItemData={this.state.testItemData} />} />
             <Route path="/redflags" exact component={RedFlags} />
             <Route path="/resultschart" exact component={ResultsChart} />
