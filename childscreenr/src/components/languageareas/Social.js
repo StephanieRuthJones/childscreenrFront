@@ -8,8 +8,8 @@ const Social = (props) => {
 
             {props.testItemData.filter(data => data.category === 'social').map(data => {
                 return <div className="p-2 bd-highlight" key={data.id}>{data.id}: {data.test_item}
-                    <button type="button" className="btn btn-outline-success accuracy">1</button>
-                    <button type="button" className="btn btn-outline-danger align-self-center accuracy">0</button>
+                    <button type="button" className="btn btn-outline-success accuracy" id={data.id} value="1" onClick={(e) => props.responseAccuracyButton(e)}>1</button>
+                    <button type="button" className="btn btn-outline-danger align-self-center accuracy" id={data.id} value="0" onClick={(e) => props.responseAccuracyButton(e)}>0</button>
 
                     <div className="p-2 bd-highlight answer"><p>Correct: {data.correct_answer} </p><p>Incorrect: {data.incorrect_answer}</p></div>
                 </div>

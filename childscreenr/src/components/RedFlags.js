@@ -9,52 +9,52 @@ const RedFlags = () => {
 
             <div className="p-2 bd-highlight">
                 <p>No joint attention
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Decreased or inappropriate eye contact
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
-            <div className="p-2 bd-highlight">
+            <div classNameName="p-2 bd-highlight">
                 <p>Self-stimulates (flaps hands, spins, rocks)
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Excessive drooling
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Does not respond to own name
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Repeats non-communicative phrases
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Excessive use of jargon
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Speech cannot be understood more than 50% of the time
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Takes a long time to respond or is unresponsive when spoken to
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="p-2 bd-highlight">
                 <p>Echolalia
-                    <input type="checkbox" class="checkbox"></input></p>
+                    <input type="checkbox" className="checkbox"></input></p>
             </div>
 
             <div className="col-xs-8 vertical-align-center">

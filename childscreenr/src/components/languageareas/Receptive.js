@@ -5,7 +5,7 @@ const Receptive = (props) => {
     console.log('receptive props', props)
     return (
         <div className="justify-content-center test-items">
-            <h2 >Receptive Language</h2>
+            <h2>Receptive Language</h2>
 
             {props.testItemData.filter(data => data.category === 'receptive').map(data => {
                 return <div className="p-2 bd-highlight" key={data.id}>{data.id}: {data.test_item}
