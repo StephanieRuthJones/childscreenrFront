@@ -1,19 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
+import { Bar } from 'react-chartjs-2'
 
-const ResultsChart = (props) => {
-    return (
-        < div >
-            <h1>Results Chart</h1>
+class ResultsChart extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            chartData: {
+                labels: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+                datasets: [{
+                    label: 'Scores',
+                    data: this.props.studentScores
+                }],
 
-            <Link to="/report">
-                <div>
-                    <button className="ui button">Screening Report</button>
-                </div>
-            </Link>
-        </div >
-
-    )
+            }
+        }
+    }
+    render() {
+        return (
+            <div className="chart">
+                <Bar
+                    data={this.state.chartData}
+                    options={{
+                        maintainAspectRatio: false
+                    }}
+                />
+            </div>
+        )
+    }
 }
 
 export default ResultsChart

@@ -59,7 +59,7 @@ const RedFlags = () => {
 
             <div className="col-xs-8 vertical-align-center">
                 <div className="row justify-content-center">
-                    <Link to="/redflags"> <button className="next btn btn-outline-success col-10 align-self-center">Next Section</button> </Link>
+                    <Link to="/resultschart"> <button className="next btn btn-outline-success col-10 align-self-center">View Results</button> </Link>
                 </div>
             </div>
         </div >

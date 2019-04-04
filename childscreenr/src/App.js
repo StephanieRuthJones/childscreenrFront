@@ -21,17 +21,24 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      testItemData: []
+      testItemData: [],
+      studentScores: []
     }
   }
   async componentDidMount() {
-    const response = await fetch(url)
-    const json = await response.json()
+    const response1 = await fetch(url)
+    const testItems = await response1.json()
+    const response2 = await fetch(url + 'students')
+    const studentData = await response2.json()
+
+    const scores = studentData.map(data => data.totalScore)
 
     this.setState({
-      testItemData: json
-    })
+      testItemData: testItems,
+      studentScores: scores
 
+    })
+    console.log('student scores', this.state.studentScores)
   }
 
   responseAccuracyButton(e) {
@@ -59,7 +66,8 @@ class App extends Component {
             <Route path="/expressive" exact render={() => <Expressive testItemData={this.state.testItemData} />} />
             <Route path="/social" exact render={() => <Social testItemData={this.state.testItemData} />} />
             <Route path="/redflags" exact component={RedFlags} />
-            <Route path="/resultschart" exact component={ResultsChart} />
+            {/* <Route path="/resultschart" exact component={ResultsChart} /> */}
+            <Route path="/resultschart" exact render={() => <ResultsChart studentScores={this.state.studentScores} />} />
             <Route path="/report" exact component={Report} />
           </div>
 

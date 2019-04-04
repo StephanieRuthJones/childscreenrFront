@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import GoogleAuth from './GoogleAuth'
+// import GoogleAuth from './GoogleAuth'
 
 const Navbar = (props) => {
 
@@ -36,7 +36,7 @@ const Navbar = (props) => {
                     <i className="far fa-file-alt"></i>
                 </Link>
 
-                <GoogleAuth />
+                {/* <GoogleAuth /> */}
             </div>
         </div>
 
