@@ -41,6 +41,8 @@ class App extends Component {
     console.log('student scores', this.state.studentScores)
   }
 
+
+
   responseAccuracyButton(e) {
     console.log('button clicked', e.target.id)
     testAccuracyData.push({ student_id: 26, testItem_id: Number(e.target.id), accuracy: Number(e.target.value) })
