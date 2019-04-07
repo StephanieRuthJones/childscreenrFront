@@ -4,7 +4,33 @@ import { Bar } from 'react-chartjs-2';
 class ResultsChart extends Component {
     constructor(props) {
         super(props)
+        console.log(props.studentScores)
+        const scores = props.studentScores
+        console.log('scores', scores)
         this.state = {
+            data: {
+                labels: [...Array(24).keys()],
+                datasets: [{
+                    label: 'Group A',
+                    data: scores,
+                    backgroundColor: 'rgba(255, 99, 132, 1)',
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        display: false,
+                        barPercentage: 1.30,
+                    }, {
+                        display: true,
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
 
         }
     }
@@ -13,6 +39,8 @@ class ResultsChart extends Component {
 
 
     render() {
+
+
         const numberOfTestTakers = (arr) => {
             return arr.length
         }
@@ -71,27 +99,41 @@ class ResultsChart extends Component {
             }, {});
         }
 
-
-        const data = {
-            labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
-            datasets: [{
-                label: 'Group A',
-                data: [12, 19, 3, 5],
-                backgroundColor: 'rgba(255, 99, 132, 1)',
-            }]
+        const findZScore = (score, arr) => {
+            let zFunctionTop = score - findMean(arr)
+            let zFunctionBottom = standardDeviation(arr)
+            let zScore = zFunctionTop / zFunctionBottom
+            return zScore
         }
+
+        const interpretZScore = (z) => {
+            if (.09 < z < .99) {
+                return 'Average'
+            } else if (z > .99) {
+                return 'Above Average'
+            } else if (z < .09) {
+                return 'Below Average'
+            } else {
+                return 'No description available'
+            }
+        }
+
+
+
 
         return (
             <div className="App" >
                 <header className="App-header">
                     <h1>Student Results Chart</h1>
+                    <p>**Student First Name**'s z-score: {findZScore(33, this.props.studentScores)}</p>
+                    <p>Description: **Student First Name**'s Score Description: {interpretZScore(findZScore(33, this.props.studentScores))}</p>
                     <p>Number of Test Takers: {numberOfTestTakers(this.props.studentScores)}</p>
                     <p>Score Range: {findRange(this.props.studentScores)} points</p>
                     <p>Standard Deviation: {standardDeviation(this.props.studentScores)}</p>
                     <p>Interval Width: {getClassIntervals(this.props.studentScores)}</p>
                 </header>
                 <article className="canvas-container">
-                    <Bar data={data} />
+                    <Bar data={this.state.data} />
                 </article>
             </div >
         );

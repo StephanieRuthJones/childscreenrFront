@@ -22,7 +22,10 @@ class App extends Component {
     super(props)
     this.state = {
       testItemData: [],
-      studentScores: []
+      studentScores: [],
+      firstName: '',
+      lastName: '',
+
     }
   }
   async componentDidMount() {
@@ -53,6 +56,15 @@ class App extends Component {
     console.log('total score', totalScore)
   }
 
+  studentInfoForm = (e) => {
+    console.log('id', e.target.id)
+    console.log('value', e.target.value)
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+
+  }
+
   render() {
     console.log(this.state.testItemData)
     return (
@@ -63,7 +75,7 @@ class App extends Component {
           <div>
             <Navbar />
             <Route path="/" exact component={Materials} />
-            <Route path="/studentinfo" exact component={StudentInfo} />
+            <Route path="/studentinfo" exact render={() => <StudentInfo studentScores={this.studentInfoForm} />} />
             <Route path="/receptive" exact render={() => <Receptive testItemData={this.state.testItemData} responseAccuracyButton={this.responseAccuracyButton} />} />
             <Route path="/expressive" exact render={() => <Expressive testItemData={this.state.testItemData} />} />
             <Route path="/social" exact render={() => <Social testItemData={this.state.testItemData} />} />

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const StudentInfo = () => {
+const StudentInfo = (props) => {
     return (
         <div>
             <form>
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Student First Name: </label>
                     <div className="row-sm-10 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="First Name"></input>
+                        <input type="text" className="form-control form-control-sm" id="firstName" placeholder="First Name" onChange={props.studentInfoForm}></input>
                     </div>
 
                 </div>
@@ -16,7 +16,7 @@ const StudentInfo = () => {
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Student Last Name: </label>
                     <div className="row-sm-10 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="Last Name"></input>
+                        <input type="text" className="form-control form-control-sm" id="lastName" placeholder="Last Name"></input>
                     </div>
                 </div>
 
