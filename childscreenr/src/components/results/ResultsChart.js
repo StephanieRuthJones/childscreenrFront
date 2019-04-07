@@ -16,12 +16,33 @@ class ResultsChart extends Component {
 
 
     render() {
+        function scoreFrequency(arr) {
+            let scores = [], frequency = [], prev;
+
+            arr.sort();
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== prev) {
+                    scores.push(arr[i]);
+                    frequency.push(1);
+                } else {
+                    frequency[frequency.length - 1]++;
+                }
+                prev = arr[i];
+            }
+
+            return { scores, frequency };
+        }
+
+        const scoresForChart = scoreFrequency(this.props.studentScores).scores
+        console.log('scoresForChart', scoresForChart)
+        const scoreFrequencyForChart = scoreFrequency(this.props.studentScores).frequency
+        console.log('scoreFrequencyForChart', scoreFrequencyForChart)
 
         const data = {
-            labels: [...Array(44).keys()],
+            labels: scoresForChart,
             datasets: [{
                 label: 'Scores',
-                data: this.props.studentScores,
+                data: scoreFrequencyForChart,
                 backgroundColor: 'rgba(255, 99, 132, 1)',
             }]
         }
@@ -88,22 +109,6 @@ class ResultsChart extends Component {
             return intervalWidth
         }
 
-        function scoreFrequency(arr) {
-            let scores = [], frequency = [], prev;
-
-            arr.sort();
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i] !== prev) {
-                    scores.push(arr[i]);
-                    frequency.push(1);
-                } else {
-                    frequency[frequency.length - 1]++;
-                }
-                prev = arr[i];
-            }
-
-            return { scores, frequency };
-        }
 
         const findZScore = (score, arr) => {
             let zFunctionTop = score - findMean(arr)
