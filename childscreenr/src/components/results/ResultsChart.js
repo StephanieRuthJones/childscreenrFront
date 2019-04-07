@@ -4,33 +4,10 @@ import { Bar } from 'react-chartjs-2';
 class ResultsChart extends Component {
     constructor(props) {
         super(props)
-        console.log(props.studentScores)
-        const scores = props.studentScores
-        console.log('scores', scores)
+
         this.state = {
-            data: {
-                labels: [...Array(24).keys()],
-                datasets: [{
-                    label: 'Group A',
-                    data: scores,
-                    backgroundColor: 'rgba(255, 99, 132, 1)',
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        display: false,
-                        barPercentage: 1.30,
-                    }, {
-                        display: true,
-                    }],
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
+
+
 
         }
     }
@@ -39,6 +16,30 @@ class ResultsChart extends Component {
 
 
     render() {
+
+        const data = {
+            labels: [...Array(44).keys()],
+            datasets: [{
+                label: 'Scores',
+                data: this.props.studentScores,
+                backgroundColor: 'rgba(255, 99, 132, 1)',
+            }]
+        }
+        const options = {
+            scales: {
+                xAxes: [{
+                    display: false,
+                    barPercentage: .85,
+                }, {
+                    display: true,
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
 
 
         const numberOfTestTakers = (arr) => {
@@ -87,16 +88,21 @@ class ResultsChart extends Component {
             return intervalWidth
         }
 
-        const getScoreFrequency = (arr) => {
-            return arr.reduce(function (acc, curr) {
-                if (typeof acc[curr] == 'undefined') {
-                    acc[curr] = 1;
-                } else {
-                    acc[curr] += 1;
-                }
+        function scoreFrequency(arr) {
+            let scores = [], frequency = [], prev;
 
-                return acc;
-            }, {});
+            arr.sort();
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== prev) {
+                    scores.push(arr[i]);
+                    frequency.push(1);
+                } else {
+                    frequency[frequency.length - 1]++;
+                }
+                prev = arr[i];
+            }
+
+            return { scores, frequency };
         }
 
         const findZScore = (score, arr) => {
@@ -133,7 +139,7 @@ class ResultsChart extends Component {
                     <p>Interval Width: {getClassIntervals(this.props.studentScores)}</p>
                 </header>
                 <article className="canvas-container">
-                    <Bar data={this.state.data} />
+                    <Bar data={data} options={options} />
                 </article>
             </div >
         );
