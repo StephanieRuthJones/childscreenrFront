@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 
 class ResultsChart extends Component {
-    constructor(props) {
-        super(props)
 
-        this.state = {
-
-
-
-        }
-    }
 
 
 
@@ -109,13 +101,16 @@ class ResultsChart extends Component {
             return intervalWidth
         }
 
+        const totalScore = this.props.totalScore
 
         const findZScore = (score, arr) => {
             let zFunctionTop = score - findMean(arr)
             let zFunctionBottom = standardDeviation(arr)
             let zScore = zFunctionTop / zFunctionBottom
+
             return zScore
         }
+
 
         const interpretZScore = (z) => {
             if (.09 < z < .99) {
@@ -136,8 +131,10 @@ class ResultsChart extends Component {
             <div className="App" >
                 <header className="App-header">
                     <h1>Student Results Chart</h1>
-                    <p>**Student First Name**'s z-score: {findZScore(33, this.props.studentScores)}</p>
-                    <p>Description: **Student First Name**'s Score Description: {interpretZScore(findZScore(33, this.props.studentScores))}</p>
+                    <p>{this.props.firstName} scored {totalScore} out of 44 test items</p>
+                    <p>{this.props.firstName}'s Score Description: {interpretZScore(findZScore(this.props.totalScore, this.props.studentScores))}</p>
+                    <p>{this.props.firstName}'s z-score: {findZScore(33, this.props.studentScores)}</p>
+
                     <p>Number of Test Takers: {numberOfTestTakers(this.props.studentScores)}</p>
                     <p>Score Range: {findRange(this.props.studentScores)} points</p>
                     <p>Standard Deviation: {standardDeviation(this.props.studentScores)}</p>

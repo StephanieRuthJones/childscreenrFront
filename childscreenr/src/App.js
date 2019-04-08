@@ -23,8 +23,17 @@ class App extends Component {
     this.state = {
       testItemData: [],
       studentScores: [],
+      totalScore: 0,
+      schoolName: '',
       firstName: '',
       lastName: '',
+      sex: '',
+      age: '',
+      primaryLanguage: '',
+      secondaryLanguage: '',
+      teacherName: '',
+      SLPName: '',
+      zScore: 0
 
     }
   }
@@ -46,7 +55,7 @@ class App extends Component {
 
 
 
-  responseAccuracyButton(e) {
+  responseAccuracyButton = (e) => {
     console.log('button clicked', e.target.id)
     testAccuracyData.push({ student_id: 26, testItem_id: Number(e.target.id), accuracy: Number(e.target.value) })
     console.log('test acc data', testAccuracyData)
@@ -54,9 +63,11 @@ class App extends Component {
     //post above info
     totalScore += Number(e.target.value)
     console.log('total score', totalScore)
+    this.setState = { totalScore: totalScore }
   }
 
   studentInfoForm = (e) => {
+    console.log('student form changed')
     console.log('id', e.target.id)
     console.log('value', e.target.value)
     this.setState({
@@ -66,7 +77,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.testItemData)
+    console.log('firstname in state', this.state.firstName)
     return (
       <div className="ui container">
 
@@ -75,14 +86,40 @@ class App extends Component {
           <div>
             <Navbar />
             <Route path="/" exact component={Materials} />
-            <Route path="/studentinfo" exact render={() => <StudentInfo studentScores={this.studentInfoForm} />} />
-            <Route path="/receptive" exact render={() => <Receptive testItemData={this.state.testItemData} responseAccuracyButton={this.responseAccuracyButton} />} />
-            <Route path="/expressive" exact render={() => <Expressive testItemData={this.state.testItemData} />} />
-            <Route path="/social" exact render={() => <Social testItemData={this.state.testItemData} />} />
+
+            <Route path="/studentinfo" exact render={() => <StudentInfo
+              studentInfoForm={this.studentInfoForm} />} />
+
+            <Route path="/receptive" exact render={() => <Receptive
+              testItemData={this.state.testItemData}
+              responseAccuracyButton={this.responseAccuracyButton} />} />
+
+            <Route path="/expressive" exact render={() => <Expressive
+              testItemData={this.state.testItemData} />} />
+
+            <Route path="/social" exact render={() => <Social
+              testItemData={this.state.testItemData} />} />
+
             <Route path="/redflags" exact component={RedFlags} />
-            {/* <Route path="/resultschart" exact component={ResultsChart} /> */}
-            <Route path="/resultschart" exact render={() => <ResultsChart studentScores={this.state.studentScores} />} />
-            <Route path="/report" exact component={Report} />
+
+            <Route path="/resultschart" exact render={() => <ResultsChart
+              firstName={this.state.firstName}
+              lastName={this.state.lastName}
+              studentScores={this.state.studentScores}
+              totalScore={this.state.totalScore} />} />
+
+            <Route path="/report" exact render={() => <Report
+              schoolName={this.state.schoolName}
+              firstName={this.state.firstName}
+              lastName={this.state.lastName}
+              sex={this.state.sex} age={this.state.age}
+              primaryLanguage={this.state.primaryLanguage}
+              secondaryLanguage={this.state.secondaryLanguage}
+              teacherName={this.state.teacherName}
+              SLPName={this.state.SLPName}
+              totalScore={this.state.totalScore}
+              zScore={this.state.zScore} />} />
+
           </div>
 
         </BrowserRouter>

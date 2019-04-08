@@ -17,7 +17,7 @@ const RedFlags = () => {
                     <input type="checkbox" className="checkbox"></input></p>
             </div>
 
-            <div classNameName="p-2 bd-highlight">
+            <div className="p-2 bd-highlight">
                 <p>Self-stimulates (flaps hands, spins, rocks)
                     <input type="checkbox" className="checkbox"></input></p>
             </div>

@@ -6,6 +6,14 @@ const StudentInfo = (props) => {
         <div>
             <form>
                 <div className="form-group row vertical-align-center">
+                    <label className="row-sm-2 row-form-label row-form-label-sm " >School Name: </label>
+                    <div className="row-sm-10 input">
+                        <input type="text" className="form-control form-control-sm" id="schoolName" placeholder="Bridge Elementary School" onChange={props.studentInfoForm}></input>
+                    </div>
+
+                </div>
+
+                <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Student First Name: </label>
                     <div className="row-sm-10 input">
                         <input type="text" className="form-control form-control-sm" id="firstName" placeholder="First Name" onChange={props.studentInfoForm}></input>
@@ -16,49 +24,49 @@ const StudentInfo = (props) => {
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Student Last Name: </label>
                     <div className="row-sm-10 input">
-                        <input type="text" className="form-control form-control-sm" id="lastName" placeholder="Last Name"></input>
+                        <input type="text" className="form-control form-control-sm" id="lastName" placeholder="Last Name" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-3 row-form-label row-form-label-sm " >Sex: </label>
                     <div className="row-sm-20 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="Male or Female"></input>
+                        <input type="text" className="form-control form-control-sm" placeholder="Male, Female, Intersex, N/A, Other" id="sex" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Age: </label>
                     <div className="row-sm-10 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="mm/dd/yyyy"></input>
+                        <input type="text" className="form-control form-control-sm" placeholder="3 years, 1 month" id="age" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Primary Language: </label>
                     <div className="row-sm-10 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="Primary Language"></input>
+                        <input type="text" className="form-control form-control-sm" placeholder="Primary Language" id="primaryLanguage" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Secondary Language: </label>
                     <div className="row-sm-10 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="Secondary Language"></input>
+                        <input type="text" className="form-control form-control-sm" placeholder="Secondary Language" id="secondaryLanguage" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-3 row-form-label row-form-label-sm " >Teacher Name: </label>
                     <div className="row-sm-10 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="Teacher Name"></input>
+                        <input type="text" className="form-control form-control-sm" placeholder="Teacher Name" id="teacherName" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-3 row-form-label row-form-label-sm " >Speech-Language Pathologist Name: </label>
                     <div className="row-sm-20 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="SLP Name"></input>
+                        <input type="text" className="form-control form-control-sm" placeholder="SLP Name, M.S., CCC-SLP" id="SLPName" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
