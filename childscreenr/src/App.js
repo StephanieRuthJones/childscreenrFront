@@ -110,7 +110,8 @@ class App extends Component {
               firstName={this.state.firstName}
               lastName={this.state.lastName}
               studentScores={this.state.studentScores}
-              totalScore={this.state.totalScore} />} />
+              totalScore={this.state.totalScore} />}
+            />
 
             <Route path="/report" exact render={() => <Report
               schoolName={this.state.schoolName}

@@ -26,9 +26,10 @@ class ResultsChart extends Component {
         }
 
         const scoresForChart = scoreFrequency(this.props.studentScores).scores
-        console.log('scoresForChart', scoresForChart)
+
         const scoreFrequencyForChart = scoreFrequency(this.props.studentScores).frequency
-        console.log('scoreFrequencyForChart', scoreFrequencyForChart)
+
+
 
         const data = {
             labels: scoresForChart,
@@ -131,9 +132,9 @@ class ResultsChart extends Component {
             <div className="App" >
                 <header className="App-header">
                     <h1>Student Results Chart</h1>
-                    <p>{this.props.firstName} scored {totalScore} out of 44 test items</p>
+                    <p>Accuracy: {totalScore} out of 44 test items</p>
                     <p>Score Description: {interpretZScore(findZScore(this.props.totalScore, this.props.studentScores))}</p>
-                    <p>Z-score: {findZScore(33, this.props.studentScores)}</p>
+                    <p>Z-score: {findZScore(this.props.totalScore, this.props.studentScores)}</p>
 
                     <p>Number of Test Takers: {numberOfTestTakers(this.props.studentScores)}</p>
                     <p>Mean: {findMean(this.props.studentScores)}</p>
