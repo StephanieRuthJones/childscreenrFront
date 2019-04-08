@@ -83,7 +83,7 @@ class ResultsChart extends Component {
             }
             console.log('sum', sum)
             let mean = sum / arr.length
-            return mean
+            return mean.toFixed(2)
 
         }
 
@@ -92,13 +92,13 @@ class ResultsChart extends Component {
             for (let i = 0; i < arr.length; i++) {
                 diffArr.push(Math.pow(arr[i] - (findMean(arr)), 2))
             }
-            return Math.sqrt(findMean(diffArr))
+            return Math.sqrt(findMean(diffArr)).toFixed(2)
 
         }
 
         const getClassIntervals = (arr) => {
             const intervalWidth = standardDeviation(arr) / 3
-            return intervalWidth
+            return intervalWidth.toFixed(2)
         }
 
         const totalScore = this.props.totalScore
@@ -108,7 +108,7 @@ class ResultsChart extends Component {
             let zFunctionBottom = standardDeviation(arr)
             let zScore = zFunctionTop / zFunctionBottom
 
-            return zScore
+            return zScore.toFixed(2)
         }
 
 
@@ -132,13 +132,15 @@ class ResultsChart extends Component {
                 <header className="App-header">
                     <h1>Student Results Chart</h1>
                     <p>{this.props.firstName} scored {totalScore} out of 44 test items</p>
-                    <p>{this.props.firstName}'s Score Description: {interpretZScore(findZScore(this.props.totalScore, this.props.studentScores))}</p>
-                    <p>{this.props.firstName}'s z-score: {findZScore(33, this.props.studentScores)}</p>
+                    <p>Score Description: {interpretZScore(findZScore(this.props.totalScore, this.props.studentScores))}</p>
+                    <p>Z-score: {findZScore(33, this.props.studentScores)}</p>
 
                     <p>Number of Test Takers: {numberOfTestTakers(this.props.studentScores)}</p>
-                    <p>Score Range: {findRange(this.props.studentScores)} points</p>
+                    <p>Mean: {findMean(this.props.studentScores)}</p>
                     <p>Standard Deviation: {standardDeviation(this.props.studentScores)}</p>
-                    <p>Interval Width: {getClassIntervals(this.props.studentScores)}</p>
+                    <p>Score Range: {findRange(this.props.studentScores)} points</p>
+
+                    {/* <p>Interval Width: {getClassIntervals(this.props.studentScores)}</p> */}
                 </header>
                 <article className="canvas-container">
                     <Bar data={data} options={options} />
@@ -151,54 +153,3 @@ class ResultsChart extends Component {
 export default ResultsChart;
 
 
-
-
-// import React, { Component } from 'react'
-// import { Bar } from 'react-chartjs-2'
-
-// class ResultsChart extends Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-
-//             chartData: {
-//                 // labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
-//                 datasets: [{
-//                     label: 'Scores',
-//                     data: this.props.studentScores,
-//                     backgroundColor: [
-//                         'rgba(255, 99, 132, 0.2)',
-//                         'rgba(54, 162, 235, 0.2)',
-//                         'rgba(255, 206, 86, 0.2)',
-//                         'rgba(75, 192, 192, 0.2)',
-//                         'rgba(153, 102, 255, 0.2)',
-//                         'rgba(255, 159, 64, 0.2)'
-//                     ],
-//                     borderColor: [
-//                         'rgba(255, 99, 132, 1)',
-//                         'rgba(54, 162, 235, 1)',
-//                         'rgba(255, 206, 86, 1)',
-//                         'rgba(75, 192, 192, 1)',
-//                         'rgba(153, 102, 255, 1)',
-//                         'rgba(255, 159, 64, 1)'
-//                     ],
-//                     borderWidth: 1
-//                 }]
-//             }
-//         }
-//     }
-//     render() {
-//         return (
-//             <div className="chart">
-//                 <Bar
-//                     data={this.state.chartData}
-//                     options={{
-//                         maintainAspectRatio: false
-//                     }}
-//                 />
-//             </div>
-//         )
-//     }
-// }
-
-// export default ResultsChart

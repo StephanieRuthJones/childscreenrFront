@@ -59,8 +59,8 @@ class App extends Component {
     console.log('button clicked', e.target.id)
     testAccuracyData.push({ student_id: 26, testItem_id: Number(e.target.id), accuracy: Number(e.target.value) })
     console.log('test acc data', testAccuracyData)
-    //need to figure out how to find student ID
-    //post above info
+    console.log('responseAccButton Click', e.target.value)
+
     totalScore += Number(e.target.value)
     console.log('total score', totalScore)
     this.setState = { totalScore: totalScore }
@@ -95,10 +95,14 @@ class App extends Component {
               responseAccuracyButton={this.responseAccuracyButton} />} />
 
             <Route path="/expressive" exact render={() => <Expressive
-              testItemData={this.state.testItemData} />} />
+              testItemData={this.state.testItemData}
+              responseAccuracyButton={this.responseAccuracyButton} />}
+            />
 
             <Route path="/social" exact render={() => <Social
-              testItemData={this.state.testItemData} />} />
+              testItemData={this.state.testItemData}
+              responseAccuracyButton={this.responseAccuracyButton} />}
+            />
 
             <Route path="/redflags" exact component={RedFlags} />
 
