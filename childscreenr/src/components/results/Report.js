@@ -6,7 +6,7 @@ const Report = (props) => {
         < div >
             <h1>{props.firstName}'s Screening Summary Report</h1>
             <h2>Introduction</h2>
-            <p>{props.firstName} {props.lastName}, a {props.age} old female, participated in a speech-language screening session. {props.firstName} responded accurately to {props.totalScore} out of 44 test items; this score falls within average range (within 1 standard deviation of the mean, z-score of {props.zScore}) when compared with preschool-age peers.</p>
+            <p>{props.firstName} {props.lastName}, a {props.age} old {props.sex}, participated in a speech-language screening session. {props.firstName} responded accurately to 33 out of 44 test items; this score falls within average range (within 1 standard deviation of the mean, z-score of {props.zScore}) when compared with preschool-age peers.</p>
             <h2>Receptive Language</h2>
             <p>Receptively, {props.firstName} was able to:</p>
             <ul>
@@ -39,7 +39,7 @@ const Report = (props) => {
                 <li>Use age-appropriate grammar</li>
 
             </ul>
-            <h2>{props.firstName} was unable to:</h2>
+            <p>{props.firstName} was unable to:</p>
             <ul>
                 <li>Label opposites during sentence completion tasks: short, tall</li>
                 <li>Tell a story that includes: end</li>
@@ -72,16 +72,16 @@ const Report = (props) => {
             </ul>
 
 
-            <h2>Conclusion and Recommendations</h2>
-            <p>{props.firstName} {props.lastName}, a {props.age} old preschool student at {props.schoolName}, participated in a speech-language screening. {props.firstName}’s score of 39/44 is within average range when compared with classmate performance. However, due to the presence of developmental red flags, it is recommended that {props.firstName} participate in a comprehensive speech-language evaluation to determine the presence of any speech-language disorders that warrant school-based services.</p>
+            <h2>Conclusions and Recommendations</h2>
+            <p>{props.firstName} {props.lastName}, a {props.age} old preschool student at {props.schoolName}, participated in a speech-language screening. {props.firstName}’s score of 33/44 is within average range when compared with classmate performance. However, due to the presence of developmental red flags, it is recommended that {props.firstName} participate in a comprehensive speech-language evaluation to determine the presence of any speech-language disorders that warrant school-based services.</p>
 
 
-
-            <Link to="/studentinfo">
-                <div className="mt-3">
-                    <button className="ui button">New Student</button>
+            <div className="col-xs-8 vertical-align-center">
+                <div className="row justify-content-center">
+                    <Link to="/studentinfo"> <button className="btn btn-outline-success col-10 align-self-center">New Student</button> </Link>
                 </div>
-            </Link>
+            </div>
+
         </div >
     )
 }

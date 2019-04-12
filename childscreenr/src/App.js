@@ -117,7 +117,8 @@ class App extends Component {
               schoolName={this.state.schoolName}
               firstName={this.state.firstName}
               lastName={this.state.lastName}
-              sex={this.state.sex} age={this.state.age}
+              sex={this.state.sex}
+              age={this.state.age}
               primaryLanguage={this.state.primaryLanguage}
               secondaryLanguage={this.state.secondaryLanguage}
               teacherName={this.state.teacherName}
