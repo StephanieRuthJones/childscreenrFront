@@ -103,6 +103,7 @@ class ResultsChart extends Component {
         }
 
         const totalScore = this.props.totalScore
+        console.log('final total score', totalScore)
 
         const findZScore = (score, arr) => {
             let zFunctionTop = score - findMean(arr)
@@ -132,7 +133,7 @@ class ResultsChart extends Component {
             <div className="App" >
                 <header className="App-header">
                     <h1>Student Results Chart</h1>
-                    <p>Accuracy: 33 out of 44 test items</p>
+                    <p>Accuracy: {this.props.totalScore} out of 44 test items</p>
                     <p>Score Description: {interpretZScore(findZScore(33, this.props.studentScores))}</p>
                     <p>Z-score: -0.87 </p>
                     {/* <p>Z-score: -0.87 {findZScore(this.props.totalScore, this.props.studentScores)}</p> */}

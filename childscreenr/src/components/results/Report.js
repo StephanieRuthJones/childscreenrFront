@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const Report = (props) => {
+    console.log('props', props)
     return (
         < div >
             <h1>{props.firstName}'s Screening Summary Report</h1>
             <h2>Introduction</h2>
-            <p>{props.firstName} {props.lastName}, a {props.age} old {props.sex}, participated in a speech-language screening session. {props.firstName} responded accurately to 33 out of 44 test items; this score falls within average range (within 1 standard deviation of the mean, z-score of {props.zScore}) when compared with preschool-age peers.</p>
+            <p>{props.firstName} {props.lastName}, a {props.age} old male, participated in a speech-language screening session. {props.firstName} responded accurately to 33 out of 44 test items; this score falls within average range (within 1 standard deviation of the mean, z-score of -0.87) when compared with preschool-age peers.</p>
             <h2>Receptive Language</h2>
             <p>Receptively, {props.firstName} was able to:</p>
             <ul>

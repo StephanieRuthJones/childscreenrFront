@@ -16,7 +16,7 @@ import Report from './components/results/Report'
 
 const url = 'http://localhost:3002/'
 const testAccuracyData = []
-let totalScore = 0
+let totalScored = 0
 class App extends Component {
   constructor(props) {
     super(props)
@@ -35,6 +35,7 @@ class App extends Component {
       SLPName: '',
       zScore: 0
 
+
     }
   }
   async componentDidMount() {
@@ -44,7 +45,6 @@ class App extends Component {
     const studentData = await response2.json()
 
     const scores = studentData.map(data => data.totalScore)
-
     this.setState({
       testItemData: testItems,
       studentScores: scores
@@ -54,16 +54,14 @@ class App extends Component {
   }
 
 
-
   responseAccuracyButton = (e) => {
-    console.log('button clicked', e.target.id)
-    testAccuracyData.push({ student_id: 26, testItem_id: Number(e.target.id), accuracy: Number(e.target.value) })
-    console.log('test acc data', testAccuracyData)
-    console.log('responseAccButton Click', e.target.value)
 
-    totalScore += Number(e.target.value)
-    console.log('total score', totalScore)
-    this.setState = { totalScore: totalScore }
+    testAccuracyData.push({ student_id: 26, testItem_id: Number(e.target.id), accuracy: Number(e.target.value) })
+    totalScored += Number(e.target.value)
+    console.log('total score', totalScored)
+    this.setState({
+      totalScore: totalScored
+    })
   }
 
   studentInfoForm = (e) => {
@@ -75,6 +73,7 @@ class App extends Component {
     })
 
   }
+
 
   render() {
     console.log('firstname in state', this.state.firstName)

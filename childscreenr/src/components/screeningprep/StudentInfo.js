@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+
 const StudentInfo = (props) => {
     return (
         <div>
@@ -27,13 +28,7 @@ const StudentInfo = (props) => {
                         <input type="text" className="form-control form-control-sm" id="lastName" placeholder="Last Name" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
-
-                <div className="form-group row vertical-align-center">
-                    <label className="row-sm-3 row-form-label row-form-label-sm " >Sex: </label>
-                    <div className="row-sm-20 input">
-                        <input type="text" className="form-control form-control-sm" placeholder="Male, Female, Intersex, N/A, Other" id="sex" onChange={props.studentInfoForm}></input>
-                    </div>
-                </div>
+           
 
                 <div className="form-group row vertical-align-center">
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Age: </label>
@@ -53,6 +48,13 @@ const StudentInfo = (props) => {
                     <label className="row-sm-2 row-form-label row-form-label-sm " >Secondary Language: </label>
                     <div className="row-sm-10 input">
                         <input type="text" className="form-control form-control-sm" placeholder="Secondary Language" id="secondaryLanguage" onChange={props.studentInfoForm}></input>
+                    </div>
+                </div>
+
+                <div className="form-group row vertical-align-center">
+                    <label className="row-sm-3 row-form-label row-form-label-sm " >Sex: </label>
+                    <div className="row-sm-20 input">
+                        <input type="text" className="form-control form-control-sm" placeholder="male, female, intersex, N/A, other" id="sex" onChange={props.studentInfoForm}></input>
                     </div>
                 </div>
 
