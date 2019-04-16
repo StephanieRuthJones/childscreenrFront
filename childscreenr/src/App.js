@@ -16,7 +16,7 @@ import Report from './components/results/Report'
 
 const url = 'http://localhost:3002/'
 const testAccuracyData = []
-let totalScored = 0
+let totalScore = 0
 class App extends Component {
   constructor(props) {
     super(props)
@@ -57,10 +57,10 @@ class App extends Component {
   responseAccuracyButton = (e) => {
 
     testAccuracyData.push({ student_id: 26, testItem_id: Number(e.target.id), accuracy: Number(e.target.value) })
-    totalScored += Number(e.target.value)
-    console.log('total score', totalScored)
+    totalScore += Number(e.target.value)
+    console.log('total score', totalScore)
     this.setState({
-      totalScore: totalScored
+      totalScore: totalScore
     })
   }
 

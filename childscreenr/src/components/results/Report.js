@@ -11,7 +11,7 @@ const Report = (props) => {
             <h2>Receptive Language</h2>
             <p>Receptively, {props.firstName} was able to:</p>
             <ul>
-                <li>Answer who, what, when, where questions</li>
+                <li>Answer questions: who, what, when, where</li>
                 <li>Follow one- and two-step directions</li>
                 <li>Follow directions with embedded prepositions: in, on, under</li>
                 <li>Repeat three-word lists and sentences</li>
@@ -20,9 +20,8 @@ const Report = (props) => {
             </ul>
             <p>However, {props.firstName} was unable to:</p>
             <ul>
-                <li>Answer why questions</li>
+                <li>Answer questions: why</li>
                 <li>Follow three-step directions</li>
-                <li>Follow directions with embedded prepositions: in, on, under</li>
                 <li>Follow directions with embedded prepositions: next to</li>
                 <li>Identify colors: black, green, orange</li>
 
@@ -74,7 +73,7 @@ const Report = (props) => {
 
 
             <h2>Conclusions and Recommendations</h2>
-            <p>{props.firstName} {props.lastName}, a {props.age} old preschool student at {props.schoolName}, participated in a speech-language screening. {props.firstName}’s score of 33/44 is within average range when compared with classmate performance. However, due to the presence of developmental red flags, it is recommended that {props.firstName} participate in a comprehensive speech-language evaluation to determine the presence of any speech-language disorders that warrant school-based services.</p>
+            <p>{props.firstName} {props.lastName}, a {props.age} old preschool student at {props.schoolName}, participated in a speech-language screening. {props.firstName}’s score of {props.totalScore}/44 is within average range when compared with classmate performance. However, due to the presence of developmental red flags, it is recommended that {props.firstName} participate in a comprehensive speech-language evaluation to determine the presence of any speech-language disorders that warrant school-based services.</p>
 
 
             <div className="col-xs-8 vertical-align-center">
